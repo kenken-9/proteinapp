@@ -1,0 +1,38 @@
+<%= render "shared/header"  %>
+<div class="top">
+        <div class="top-title">
+        <h1>プロテインを選ぶなら<br>アプリ名</h1>
+        </div>
+    </div>
+    <div class="contents">
+        <div class="item-contents">
+            <h2 class="item-title">Protein index</h2>
+            <ul class="item-list">
+                <%# .each do |  |  %>
+                    <li class="list">
+                        <%= link_to "#" do %>
+                            <div class="item-img-content">
+                            <%= image_tag "test_image.png", class: "item-img" %>
+                            </div>
+                            <div class="item-info">
+                                <h3 class="item-name">
+                                <%= "商品名" %>
+                                </h3>
+                                <div class="item-category">
+                                     <span><%="記載するアイテム情報"%></span> 
+                                </div>
+                            </div>
+                        <% end %>
+                    </li>
+                <%# end %>
+            </ul>
+        </div>
+        <div class="side-ber">
+            <ul class="side-info">
+            <%# ログイン機能実装後に編集 %>
+                <li> <%= link_to "新規登録" , "#" , class: "sign-up" %> </li>
+             <%# //ログイン機能実装後に編集 %>
+            </ul>
+        </div>
+    </div>
+<%= render "shared/footer"  %>
