@@ -1,0 +1,18 @@
+<header class= "top-page-header" >
+    <div class="header-left">
+        <%= link_to "プロテイン" , url: "#" ,class:"header-title"%>
+    </div>
+    <div class="header-right">
+        <ul class="list-right">
+            <%# if user_signed_in? %>
+                <li><%= link_to "ユーザー名" , "#", class: "user-nickname" %> </li>
+                <li><%= link_to "ログアウト" , "#" ,method: :delete , class: "logout" %></li>
+            <%# else %>
+                <%# <#li> <%= link_to "ログイン" , "#" , class: "logout" %> <%#</li> 
+                <%# <li> <%= link_to "新規登録" , "#" , class: "sign-up" %> <%#</li> 
+            <%# end %>
+        </ul>
+    </div>
+
+
+</header>

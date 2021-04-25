@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+.top-page-header{
+    width: 100vw;
+    padding: 3vh 10vw;
+    display: flex;
+    background-color: gold;
+    justify-content: space-between;
+}
+
+.header-left{
+
+}
+
+.header-right{
+    
+}
+
+.list-right{
+    display: flex;
+}
+
+.user-nickname{
+    text-decoration: none;
+}
+
+.logout{
+    text-decoration: none;
+    margin-left: 5vw;
+}
