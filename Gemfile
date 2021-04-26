@@ -60,3 +60,4 @@ gem "devise"
 
 gem 'rails-i18n'
 
+gem 'factory_bot_rails'
