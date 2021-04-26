@@ -6,3 +6,8 @@
     color: white;
     cursor: pointer;
 }
+
+.login-flash-message {
+    text-align: center;
+    color: red;
+}
