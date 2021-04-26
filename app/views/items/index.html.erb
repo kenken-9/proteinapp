@@ -29,9 +29,26 @@
         </div>
         <div class="side-ber">
             <ul class="side-info">
-            <%# ログイン機能と投稿機能を実装後に編集 %>
-                <li> <%#= link_to "新規登録" , "#" , class: ".side-sign-up" %> </li>
-             <%# //ログイン投稿機能を機能実装後に編集 %>
+              <% if user_signed_in? %>
+                <%= link_to(new_item_path,class: "post-btn") do  %>
+                <span class= "post-btn-text">商品投稿</span>
+                <%= image_tag "icon_barbell.png"  , class: "post-btn-icon" %>
+                <%end%>
+                <%else %>
+                <li> 
+                    <div class="user-info-container">
+                        <div class="side-container">
+                            <h2>新規登録</h2>
+                            <div class="explan-login">
+                                <span>新規登録をすると、お気に入りのプロテインを保存したり、投稿できたりします。</span>
+                            </div>
+                            <div class="sign-up-box">
+                                <%= link_to "新規登録" , new_user_registration_path , class: "side-sign-up" %> </li>
+                            </div>
+                        </div>
+                    </div>
+            <%end %>
+             
             </ul>
         </div>
     </div>
