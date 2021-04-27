@@ -4,3 +4,12 @@ ja:
       user:
         nickname: ニックネーム
         profile: プロフィール
+      item:
+        image: 画像
+        name: プロテイン名
+        taste: 味
+        price: 価格
+        protein: タンパク質の量
+        lipid: 脂質の量
+        amount: 内容量
+        impression: おすすめのポイント
