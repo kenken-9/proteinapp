@@ -26,14 +26,14 @@
                     プロテイン名
                         <span class="indispensable">必須</span>
                     </div>
-                    <%= f.text_field :name, class:"items-text" , id:"item-name" , placeholder:"○○プロテイン" %>
+                    <%= f.text_field :name, class:"items-text" , id:"item-name" , placeholder:"プロテイン名を入力してください" %>
                 </div>
                 <div class="items-wrap">
                     <div class="weight-bold-text">
                         味
                         <span class="indispensable">必須</span>
                     </div>
-                    <%= f.text_field :taste, class:"items-text" , id:"item-taste" , placeholder:"バナナ味" %>
+                    <%= f.text_field :taste, class:"items-text" , id:"item-taste" , placeholder:"味を入力してください" %>
             </div>
             <div class="items-wrap">
                     <div class="weight-bold-text">
@@ -41,7 +41,7 @@
                         <span class="indispensable">必須</span>
                     </div>
                     <div class="items-integer-wrap">
-                        <%= f.text_field :price, class:"items-integer" , id:"item-price" , placeholder:"3000" %>
+                        <%= f.text_field :price, class:"items-integer" , id:"item-price" , placeholder:"半角数字" %>
                         <span class="items-unit"> 円 </span>
                     </div>
             </div>
@@ -51,8 +51,8 @@
                         <span class="indispensable">必須</span>
                     </div>
                     <div class="items-integer-wrap">
-                        <%= f.text_field :amount, class:"items-integer" , id:"item-amount" , placeholder:"１" %>
-                        <span class="items-unit"> kg </span>
+                        <%= f.text_field :amount, class:"items-integer" , id:"item-amount" , placeholder:"半角数字" %>
+                        <span class="items-unit"> g </span>
                     </div>
             </div>
             <div class="items-wrap">
@@ -61,7 +61,7 @@
                         <span class="indispensable">必須</span>
                     </div>
                     <div class="items-integer-wrap">
-                        <%= f.text_field :protein, class:"items-integer" , id:"item-protein" , placeholder:"20" %>
+                        <%= f.text_field :protein, class:"items-integer" , id:"item-protein" , placeholder:"半角数字" %>
                         <span class="items-unit"> g </span>
                     </div>
             </div>
@@ -71,7 +71,7 @@
                 <span class="indispensable">必須</span>
                  </div>
                 <div class="items-integer-wrap">
-                    <%= f.text_field :lipid, class:"items-integer" , id:"item-lipid" , placeholder:"1" %>
+                    <%= f.text_field :lipid, class:"items-integer" , id:"item-lipid" , placeholder:"半角数字" %>
                     <span class="items-unit"> g </span>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                         おすすめのポイント
                         <span class="indispensable">必須</span>
                     </div>
-                    <%= f.text_area :impression, class:"items-text" , id:"item-impression" , placeholder:"筋トレの後もぐいぐい飲めるほどスッキリとした口当たりです。" %>
+                    <%= f.text_area :impression, class:"items-text" , id:"item-impression" , placeholder:"おすすめのポイントを入力してください" %>
             </div>
             </div>
         <%# /商品の説明 %>
