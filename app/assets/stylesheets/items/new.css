@@ -1,0 +1,88 @@
+.items-sell-contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 500px;
+}
+
+.items-sell-main{
+    width: 70vw;
+    min-width: 450px;
+    padding: 10vh 12vw ;
+    border: 1px solid black;
+    margin: 20vh 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.items-sell-title{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.weight-bold-text{
+    font-weight: bold;
+    min-width: 170px;
+    margin-bottom: 10px;
+}
+
+.img-upload{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:  2vh 0;
+}
+
+.click-upload p{
+    margin-bottom: 15px;
+}
+
+.new-items{
+    padding: 2vh 0;
+}
+
+.items-wrap{
+    display: flex;
+    justify-content: space-between;
+    padding:  3vh 0;
+}
+
+.items-integer{
+    width: 80px;
+    text-align: center;
+    padding: 2px 0;
+}
+
+.items-text{
+    width: 50%;
+    padding: 5px 0 ;
+    resize: none;
+    min-width: 365px;
+}
+
+.items-integer-wrap{
+    display: flex;
+    min-width: 110px;
+    justify-content: space-between;
+}
+
+.sell-btn-contents{
+    width: 100%;
+    text-align: center;
+}
+
+.sell-btn{
+    width: 70%;
+    height: 50px;
+    font-size: 14px;
+    margin-bottom: 4vh;
+}
+
+.back-btn{
+    background-color: antiquewhite;
+    width: 70%;
+    padding: 15px 32%;
+}
