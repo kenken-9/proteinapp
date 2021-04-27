@@ -1,87 +1,97 @@
-<div class="items-sell-main">
-    <h2 class="items-sell-title">プロテインの情報を入力</h2>
-    <%= form_with model: @item, class: 'registration-main', local: true do |f| %>
+<div class="items-sell-contents">
+    <div class="items-sell-main">
+        <h2 class="items-sell-title">プロテインの情報を入力</h2>
+        <%= form_with model: @item, url: "#", local: true do |f| %>
 
-    <%= render "shared/error_messages" , model:f.object %>
+        <%= render "shared/error_messages" , model:f.object %>
 
-    <%# 投稿画像 %>
-    <div class="img-upload">
-        <div class="weight-bold-text">
-            投稿画像
-            <span class="indispensable">必須</span>
-        </div>
-        <div class="click-upload">
-            <p>
-            クリックしてファイルをアップロード
-            </p>
-            <%= f.file_field :image, id: "item-image" %>
-        </div>
-    </div>
-    <%# /投稿画像 %>
-    <%# 商品の説明 %>
-        <div class="new-items">
+        <%# 投稿画像 %>
+        <div class="img-upload">
             <div class="weight-bold-text">
-            プロテイン名
+                投稿画像
                 <span class="indispensable">必須</span>
             </div>
-            <%= f.text_field :name, class:"items-text" , id:"item-name" , placeholder:"○○プロテイン" %>
-            <div class="items-taste">
-                <div class="weight-bold-text">
-                    味
-                    <span class="indispensable">必須</span>
-                </div>
-                <%= f.text_field :taste, class:"items-text" , id:"item-taste" , placeholder:"バナナ味" %>
-           </div>
-           <div class="items-price">
-                <div class="weight-bold-text">
-                    価格
-                    <span class="indispensable">必須</span>
-                </div>
-                <%= f.text_field :price, class:"items-text" , id:"item-price" , placeholder:"3000" %>
-                <span class="items-unit"> 円 </span>
-           </div>
-           <div class="items-amount">
-                <div class="weight-bold-text">
-                    内容量（キロ）
-                    <span class="indispensable">必須</span>
-                </div>
-                <%= f.text_field :amount, class:"items-text" , id:"item-amount" , placeholder:"１" %>
-                <span class="items-unit"> kg </span>
-           </div>
-           <div class="items-protein">
-                <div class="weight-bold-text">
-                    タンパク質（グラム）
-                    <span class="indispensable">必須</span>
-                </div>
-                <%= f.text_field :protein, class:"items-text" , id:"item-protein" , placeholder:"１杯あたりのタンパク質量" %>
-                <span class="items-unit"> g </span>
-           </div>
-           <div class="items-lipid">
-                <div class="weight-bold-text">
-                    脂質（グラム）
-                    <span class="indispensable">必須</span>
-                </div>
-                <%= f.text_field :lipid, class:"items-text" , id:"item-lipid" , placeholder:"１杯あたりの脂質量" %>
-                <span class="items-unit"> g </span>
-           </div>
-           <div class="items-impression">
-                <div class="weight-bold-text">
-                    おすすめのポイント
-                    <span class="indispensable">必須</span>
-                </div>
-                <%= f.text_area :impression, class:"items-text" , id:"item-impression" , placeholder:"筋トレの後もぐいぐい飲めるほどスッキリとした口当たりです。" %>
-                <span class="items-unit"> g </span>
-           </div>
+            <div class="click-upload">
+                <p>
+                クリックしてファイルをアップロード
+                </p>
+                <%= f.file_field :image, id: "item-image" %>
+            </div>
         </div>
-    <%# /商品の説明 %>
-    <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-        <%= f.submit "投稿する" , class:"sell-btn" %>
-        <%= link_to "もどる" , root_path, class:"back-btn" %>
+        <%# /投稿画像 %>
+        <%# 商品の説明 %>
+            <div class="new-items">
+                <div class="items-wrap">
+                    <div class="weight-bold-text">
+                    プロテイン名
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <%= f.text_field :name, class:"items-text" , id:"item-name" , placeholder:"○○プロテイン" %>
+                </div>
+                <div class="items-wrap">
+                    <div class="weight-bold-text">
+                        味
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <%= f.text_field :taste, class:"items-text" , id:"item-taste" , placeholder:"バナナ味" %>
+            </div>
+            <div class="items-wrap">
+                    <div class="weight-bold-text">
+                        価格
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <div class="items-integer-wrap">
+                        <%= f.text_field :price, class:"items-integer" , id:"item-price" , placeholder:"3000" %>
+                        <span class="items-unit"> 円 </span>
+                    </div>
+            </div>
+            <div class="items-wrap">
+                    <div class="weight-bold-text">
+                        内容量
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <div class="items-integer-wrap">
+                        <%= f.text_field :amount, class:"items-integer" , id:"item-amount" , placeholder:"１" %>
+                        <span class="items-unit"> kg </span>
+                    </div>
+            </div>
+            <div class="items-wrap">
+                    <div class="weight-bold-text">
+                        タンパク質（1食あたり）
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <div class="items-integer-wrap">
+                        <%= f.text_field :protein, class:"items-integer" , id:"item-protein" , placeholder:"20" %>
+                        <span class="items-unit"> g </span>
+                    </div>
+            </div>
+            <div class="items-wrap">
+                <div class="weight-bold-text">
+                        脂質（1食あたり）
+                <span class="indispensable">必須</span>
+                 </div>
+                <div class="items-integer-wrap">
+                    <%= f.text_field :lipid, class:"items-integer" , id:"item-lipid" , placeholder:"1" %>
+                    <span class="items-unit"> g </span>
+                </div>
+            </div>
+            <div class="items-wrap">
+                    <div class="weight-bold-text">
+                        おすすめのポイント
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <%= f.text_area :impression, class:"items-text" , id:"item-impression" , placeholder:"筋トレの後もぐいぐい飲めるほどスッキリとした口当たりです。" %>
+            </div>
+            </div>
+        <%# /商品の説明 %>
+        <%# 下部ボタン %>
+        <div class="sell-btn-contents">
+            <%= f.submit "投稿する" , class:"sell-btn" %>
+            <%= link_to "もどる" , root_path, class:"back-btn" %>
+        </div>
+        <%# /下部ボタン %>
     </div>
-    <%# /下部ボタン %>
+    <% end %>
+    <%= render "shared/footer"%>
 </div>
-
-<% end %>
-<%= render "shared/footer"%>
 
