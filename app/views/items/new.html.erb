@@ -3,9 +3,9 @@
         <h2 class="items-sell-title">プロテインの情報を入力</h2>
         <%= form_with model: @item, url: items_path, local: true do |f| %>
 
-        <%= render "shared/error_messages" , model:f.object %>
-
+        <%= render "shared/error_messages", model: f.object  %>
         <%# 投稿画像 %>
+        
         <div class="img-upload">
             <div class="weight-bold-text">
                 投稿画像
