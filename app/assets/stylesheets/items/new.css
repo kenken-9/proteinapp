@@ -13,6 +13,7 @@
     border: 1px solid black;
     margin: 20vh 0;
     border-radius: 5px;
+    text-align: center;
 }
 
 .items-sell-title{
@@ -43,10 +44,6 @@
     padding: 2vh 0;
 }
 
-.items-text{
-    width: 50%;
-}
-
 .items-wrap{
     display: flex;
     justify-content: space-between;
@@ -63,10 +60,13 @@
     width: 50%;
     padding: 5px 0 ;
     resize: none;
+    min-width: 365px;
 }
 
 .items-integer-wrap{
+    display: flex;
     min-width: 110px;
+    justify-content: space-between;
 }
 
 .sell-btn-contents{
