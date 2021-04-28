@@ -1,0 +1,52 @@
+<div class="item-show">
+    <div class="item-box">
+        <h2 class="show-name">
+        Protein Date
+        </h2>
+        <div class="show-wrap">
+            <div class="item-img-content">
+                <%= image_tag @item.image, class:"item-box-img" %>
+            </div>
+            <table class= "detail-table" >
+                <tbody>
+                    <tr>
+                        <th class="detail-item">投稿者</th>
+                        <td class="detail-value"><%= @item.user.nickname %></td>
+                    </tr>
+                    <tr>
+                        <th class="detail-item">プロテイン名</th>
+                        <td class="detail-value"><%= @item.name %></td>
+                    </tr>
+                    <tr>
+                        <th class="detail-item">味</th>
+                        <td class="detail-value"><%= @item.taste %></td>
+                    </tr>
+                    <tr>
+                        <th class="detail-item">価格</th>
+                        <td class="detail-value"><%= @item.price %>  円</td>
+                    </tr>
+                    <tr>
+                        <th class="detail-item">タンパク質</th>
+                        <td class="detail-value"><%= @item.protein %>  g</td>
+                    </tr>
+                    <tr>
+                        <th class="detail-item">脂質</th>
+                        <td class="detail-value"><%= @item.lipid %>  g</td>
+                    </tr>
+                    <tr>
+                        <th class="detail-item">内容量</th>
+                        <td class="detail-value"><%= @item.amount %>  g</td>
+                    </tr>
+                    <tr>
+                        <th class="detail-item">おすすめの<br>ポイント</th>
+                        <td class="detail-value"><%= @item.impression %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="sell-btn-show">
+            <%= link_to "もどる" , root_path, class:"show-back-btn" %>
+        </div>
+    </div>
+</div>
+<%= render "shared/footer" %>
