@@ -1,0 +1,97 @@
+<div class="items-sell-contents">
+    <div class="items-sell-main">
+        <h2 class="items-sell-title">プロテインの情報を編集</h2>
+        <%= form_with model: @item, local: true do |f| %>
+
+        <%= render "shared/error_messages", model: f.object  %>
+        <%# 投稿画像 %>
+        
+        <div class="img-upload">
+            <div class="weight-bold-text">
+                投稿画像
+                <span class="indispensable">必須</span>
+            </div>
+            <div class="click-upload">
+                <p>
+                クリックしてファイルをアップロード
+                </p>
+                <%= f.file_field :image, id: "item-image" %>
+            </div>
+        </div>
+        <%# /投稿画像 %>
+        <%# 商品の説明 %>
+            <div class="new-items">
+                <div class="items-wrap">
+                    <div class="weight-bold-text">
+                    プロテイン名
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <%= f.text_field :name, class:"items-text" , id:"item-name" , placeholder:"プロテイン名を入力してください" %>
+                </div>
+                <div class="items-wrap">
+                    <div class="weight-bold-text">
+                        味
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <%= f.text_field :taste, class:"items-text" , id:"item-taste" , placeholder:"味を入力してください" %>
+            </div>
+            <div class="items-wrap">
+                    <div class="weight-bold-text">
+                        価格
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <div class="items-integer-wrap">
+                        <%= f.text_field :price, class:"items-integer" , id:"item-price" , placeholder:"半角数字" %>
+                        <span class="items-unit"> 円 </span>
+                    </div>
+            </div>
+            <div class="items-wrap">
+                    <div class="weight-bold-text">
+                        内容量
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <div class="items-integer-wrap">
+                        <%= f.text_field :amount, class:"items-integer" , id:"item-amount" , placeholder:"半角数字" %>
+                        <span class="items-unit"> g </span>
+                    </div>
+            </div>
+            <div class="items-wrap">
+                    <div class="weight-bold-text">
+                        タンパク質（1食あたり）
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <div class="items-integer-wrap">
+                        <%= f.text_field :protein, class:"items-integer" , id:"item-protein" , placeholder:"半角数字" %>
+                        <span class="items-unit"> g </span>
+                    </div>
+            </div>
+            <div class="items-wrap">
+                <div class="weight-bold-text">
+                        脂質（1食あたり）
+                <span class="indispensable">必須</span>
+                 </div>
+                <div class="items-integer-wrap">
+                    <%= f.text_field :lipid, class:"items-integer" , id:"item-lipid" , placeholder:"半角数字" %>
+                    <span class="items-unit"> g </span>
+                </div>
+            </div>
+            <div class="items-wrap">
+                    <div class="weight-bold-text">
+                        おすすめのポイント
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <%= f.text_area :impression, class:"items-text" , id:"item-impression" , placeholder:"おすすめのポイントを入力してください" %>
+            </div>
+            </div>
+        <%# /商品の説明 %>
+        <%# 下部ボタン %>
+        <div class="sell-btn-contents">
+            <%= f.submit "変更を保存" , class:"sell-btn" %>
+            <%= link_to "もどる" , item_path(@item), class:"back-btn" %>
+        </div>
+        <%# /下部ボタン %>
+    </div>
+    <% end %>
+    <%= render "shared/footer"%>
+</div>
+
