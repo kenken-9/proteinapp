@@ -47,6 +47,9 @@
         <div class="sell-btn-show">
             <%= link_to "もどる" , root_path, class:"show-back-btn" %>
         </div>
+        <% if user_signed_in? && current_user.id == @item.user_id%>
+            <%= link_to "編集" , edit_item_path(@item), class: "edit-item-btn" %>
+        <%end%>
     </div>
 </div>
 <%= render "shared/footer" %>
