@@ -20,7 +20,8 @@
 
 .contents{
     background-color: azure;
-    width: 100%;
+    width:100%;
+    
     display: flex;
     justify-content: space-between;
 }
@@ -41,7 +42,6 @@
 }
 
 .item-list{
-    width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -68,13 +68,6 @@
     padding: 1vw;
 }
 
-.item-name{
-
-}
-
-.item-category{
-
-}
 
 /*// 商品一覧部分 */
 
