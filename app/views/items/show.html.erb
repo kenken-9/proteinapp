@@ -44,6 +44,26 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="comments">
+            <h4>コメント一覧</h4>
+            <% @comments.each do |comment| %>
+            <p>
+                <%= comment.user.nickname %>
+                <%= comment.text%>
+            </p>
+            <% end %>
+        </div>
+        <div class="comments-box">
+            <% if user_signed_in? %>
+                <%= form_with(model: [@item , @comment ], local: true) do |form| %>
+                <%= form.text_area :text , placeholder: "コメントする" ,class:"comment-text"%>
+                <%= form.submit "送信", class:"comment-btn" %>
+                <%end%>
+            <% else%>
+                <span class="comment-announce">コメントを投稿するには新規登録/ログインが必要です</span>
+            <%end%>
+        </div>
         <div class="sell-btn-show">
             <%= link_to "もどる" , root_path, class:"show-back-btn" %>
         </div>
