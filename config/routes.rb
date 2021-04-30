@@ -5,5 +5,8 @@ Rails.application.routes.draw do
 
   resources :items, shallow: true do
     resources :comments, only: [:create]
+    resources :bookmarks, only: [:create, :destroy]
   end
+
+  
 end
