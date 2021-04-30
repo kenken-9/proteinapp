@@ -1,0 +1,8 @@
+class BookmarksController < ApplicationController
+
+    
+
+   
+
+
+end
