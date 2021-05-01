@@ -1,0 +1,39 @@
+<% if user_signed_in? %>
+  <% if current_user.bookmarks.find_by(item_id: item.id) %>
+    <%= link_to item_bookmarks_path(item.id), method: :delete, class:"unbookmark-wrap" , remote: true do %>
+      <div class="bookmark-icon">
+        <%= "♡" %>
+      </div>
+      <div class="bookmark-text">
+        <%= "いいね！"  %>
+      </div>
+      <div class="bookmark-count">
+        <%= item.bookmarks.count %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to item_bookmarks_path(item.id), method: :post, class:"bookmark-wrap" , remote: true do %>
+      <div class="bookmark-icon">
+        <%= "♡" %>
+      </div>
+      <div class="bookmark-text">
+        <%= "いいね！" %>
+      </div>
+      <div class="bookmark-count">
+        <%= item.bookmarks.count %>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to new_user_session_path ,class:"unbookmark-wrap" do %>
+    <div class="bookmark-icon">
+      <%= "♡" %>
+    </div>
+    <div class="bookmark-text">
+      <%= "いいね" %>
+    </div>
+    <div class="bookmark-count">
+      <%= item.bookmarks.count %>
+    </div>
+  <% end %>
+<% end %>

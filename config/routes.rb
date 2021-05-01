@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root "items#index"
-  resources :items do
+
+  resources :items, shallow: true do
     resources :comments, only: [:create]
+    resource :bookmarks, only: [:create, :destroy]
   end
 end
