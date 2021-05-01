@@ -45,6 +45,10 @@
             </table>
         </div>
 
+        <div class="bookmarks" id="bookmark_<%= @item.id %>">
+            <%= render 'bookmarks/bookmark', item: @item %>
+        </div>
+
         <div class="comments">
             <h4>コメント一覧</h4>
             <% @comments.each do |comment| %>
@@ -73,9 +77,6 @@
         <%end%>
     </div>
 </div>
-
-<div class="bookmarks" id="bookmark_<%= @item.id %>"></div>
-<%= render 'bookmarks/bookmark', item: @item %>
 
 <%= render "shared/footer" %>
 
