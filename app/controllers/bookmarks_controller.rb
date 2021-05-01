@@ -1,23 +1,19 @@
 class BookmarksController < ApplicationController
     before_action :authenticate_user!
+    before_action :set_item
 
     def create
-        @item = Item.find(params[item_id])
-        @user = @item.user
-        current_user.bookmark(@item)
-        respond_to do |format|
-          format.html { redirect_to request.referrer || root_url }
-          format.js
-        end
+        @bookmark = Bookmark.new(user_id: current_user.id , item_id: @item.id)
+        @bookmark.save
     end
 
     def destroy
+        @bookmark = Bookmark.find_by(user_id: current_user.id, item_id: @item.id)
+        @bookmark.destroy
+    end
+
+    def set_item
         @item = Item.find(params[:item_id])
-        current_user.bookmark.find_by(item_id: @item.id).destroy
-        respond_to do |format|
-            format.html { redirect_to request.referrer || root_url }
-            format.js
-          end
     end
 
 end

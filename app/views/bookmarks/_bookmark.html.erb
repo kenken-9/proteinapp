@@ -1,0 +1,39 @@
+<% if user_signed_in? %>
+  <% if current_user.bookmarks.find_by(item_id: item.id) %>
+    <%= link_to item_bookmarks_path(item.id), method: :delete, remote: true do %>
+      <div class="icon">
+        <%#= icon('fa', 'star') %>
+      </div>
+      <div class="text">
+        <%= "いいね"  %>
+      </div>
+      <div class="count">
+        <%= item.bookmarks.count %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to item_bookmarks_path(item.id), method: :post, remote: true do %>
+      <div class="icon">
+        <%#= icon('far', 'star') %>
+      </div>
+      <div class="text">
+        <%= "いいね" %>
+      </div>
+      <div class="count">
+        <%= item.bookmarks.count %>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to new_user_session_path do %>
+    <div class="icon">
+      <%#= icon('far', 'star') %>
+    </div>
+    <div class="text">
+      <%= "いいね" %>
+    </div>
+    <div class="count">
+      <%= item.bookmarks.count %>
+    </div>
+  <% end %>
+<% end %>

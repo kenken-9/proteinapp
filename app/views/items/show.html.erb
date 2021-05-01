@@ -73,4 +73,9 @@
         <%end%>
     </div>
 </div>
+
+<div class="bookmarks" id="bookmark_<%= @item.id %>"></div>
+<%= render 'bookmarks/bookmark', item: @item %>
+
 <%= render "shared/footer" %>
+

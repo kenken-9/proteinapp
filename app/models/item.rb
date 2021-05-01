@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_one_attached :image
   has_many :comments, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_users, through: :bookmarks, source: :user
 
   with_options presence: true do
     validates :image
