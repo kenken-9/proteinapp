@@ -30,9 +30,28 @@
         <div class="side-ber">
             <ul class="side-info">
               <% if user_signed_in? %>
+
+                    <h3 class= "side-title">
+                        <%= link_to current_user.nickname , user_path(current_user), class: "user-nickname"%>
+                        さんの お気に入り一覧
+                    </h3>
+                    <% @bookmark_list.each do |item|%>
+                        <li class= "bookmark-list">
+                            <%= link_to item_path(item.id) do %>
+                                <div class= "bookmark" >
+                                    <%= image_tag item.image ,class: "bookmark-image"%>
+                                    <div class="bookmark-text">
+                                        <h4 class= "bookmark-name"><%= item.name %><h4>
+                                        <h4 class= "bookmark-taste"><%= item.taste %><h4>
+                                    </div>
+                                </div>
+                            <%end%>
+                        <li>
+                    <% end %>
+
                 <%= link_to(new_item_path,class: "post-btn") do  %>
-                <span class= "post-btn-text">商品投稿</span>
-                <%= image_tag "icon_barbell.png"  , class: "post-btn-icon" %>
+                    <span class= "post-btn-text">商品投稿</span>
+                    <%= image_tag "icon_barbell.png"  , class: "post-btn-icon" %>
                 <%end%>
                 <%else %>
                 <li> 

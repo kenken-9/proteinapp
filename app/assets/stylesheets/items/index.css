@@ -137,4 +137,44 @@
     margin: 15px auto 0 ;
 }
 
+.side-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side-title{
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.bookmark-list{
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    width:100%;
+}
+
+.bookmark{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bookmark-image{
+    width: 10vh;
+    height: 10vh;
+}
+
+.bookmark-name{
+    display: block;
+    margin: 5px 0;
+}
+
+.bookmark-taste{
+    display: block;
+    margin: 5px 0;
+}
+
 /* //サイドバー部分 */
