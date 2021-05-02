@@ -35,19 +35,23 @@
                         <%= link_to current_user.nickname , user_path(current_user), class: "user-nickname"%>
                         さんの お気に入り一覧
                     </h3>
-                    <% @bookmark_list.each do |item|%>
-                        <li class= "bookmark-list">
-                            <%= link_to item_path(item.id) do %>
-                                <div class= "bookmark" >
-                                    <%= image_tag item.image ,class: "bookmark-image"%>
-                                    <div class="bookmark-text">
-                                        <h4 class= "bookmark-name"><%= item.name %><h4>
-                                        <h4 class= "bookmark-taste"><%= item.taste %><h4>
+                    <% if @bookmark_list.present? %>
+                        <% @bookmark_list.each do |item|%>
+                            <li class= "bookmark-list">
+                                <%= link_to item_path(item.id) do %>
+                                    <div class= "bookmark" >
+                                        <%= image_tag item.image ,class: "bookmark-image"%>
+                                        <div class="bookmark-text">
+                                            <h4 class= "bookmark-name"><%= item.name %><h4>
+                                            <h4 class= "bookmark-taste"><%= item.taste %><h4>
+                                        </div>
                                     </div>
-                                </div>
-                            <%end%>
-                        <li>
-                    <% end %>
+                                <%end%>
+                            <li>
+                        <% end %>
+                    <%else%>
+                        <p>お気に入りはありません</p>
+                    <%end%>
 
                 <%= link_to(new_item_path,class: "post-btn") do  %>
                     <span class= "post-btn-text">商品投稿</span>
