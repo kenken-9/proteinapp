@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "users/show"
   devise_for :users
 
   root "items#index"
@@ -7,4 +8,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     resource :bookmarks, only: [:create, :destroy]
   end
+
+  resources :users, only: [:show] do
+    get :bookmarks, on: :collection
+  end
+  
 end

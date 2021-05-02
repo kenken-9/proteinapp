@@ -1,0 +1,6 @@
+<% if @bookmark_list.present? %>
+  <% @bookmark_list.each do |item| %>
+    <%= item.name %>
+    <%= image_tag item.image%>
+    <%end %>
+<%end%>

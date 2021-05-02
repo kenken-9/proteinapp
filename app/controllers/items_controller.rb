@@ -5,6 +5,11 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:user).order("created_at DESC")
+
+    if user_signed_in?
+      bookmarks = Bookmark.where(user_id: current_user.id).pluck(:item_id)
+      @bookmark_list = Item.find(bookmarks)
+    end
   end
 
   def new
