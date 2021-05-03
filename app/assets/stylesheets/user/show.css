@@ -1,0 +1,48 @@
+
+.mypage-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5vh 5vw;
+}
+
+.mypage-title{
+    font-size: 25px;
+    margin: 15px 0 ; 
+}
+
+.mypage-contents{
+    width: 90%;
+    background-color: #f8f8f8;
+    margin: 5vh 0;
+    padding: 1vw;
+}
+
+.mypage-subtitle{
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.mypage-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mypage-list-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 1vw;
+    margin: 1vw;
+    background-color: #fff;
+}
+
+.mypage-image{
+    width: 33vh;
+    height: 33vh;
+}

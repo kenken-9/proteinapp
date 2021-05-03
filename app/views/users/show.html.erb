@@ -1,24 +1,46 @@
-<% if @bookmark_list.present? %>
-  <% @bookmark_list.each do |item| %>
-    <%= item.name %>
-    <%= image_tag item.image%>
-    <%end %>
-<%else%>
-  <h3>お気に入りはありません<h3>
-<%end%>
 
-<% @items.each do | item |  %>
-  <li class="list">
-    <%= link_to item_path(item.id) do %>
-      <div class="item-img-content">
-        <%= image_tag item.image , class: "item-img" %>
-       </div>
-       <div class="item-info">
-        <h3 class="item-name">
-          <%= item.name %>
-        </h3>
-      </div>
-      <% end %>
-  </li>
-<% end %>
+  <div class = "mypage-wrap">
+    <h2 class = "mypage-title">
+      <%= current_user.nickname %>
+      さんのマイページ
+    </h2>
+    <div class = "mypage-contents">
+      <h3 class = "mypage-subtitle">
+        お気に入り一覧
+      </h3>
+      <% if @bookmark_list.present? %>
+        <ul class ="mypage-list">
+            <% @bookmark_list.each do |item| %>
+          <li class = "mypage-list-wrap">
+            <%= link_to item_path(item.id) do %>
+              <%= image_tag item.image , class:"mypage-image"%>
+              <h4 class= "mypage-name"><%= item.name %></h4>
+              <h4 class= "mypage-taste"><%= item.taste  %></h4>
+              <%end%>
+            <%end %>
+          </li>
+      <%else%>
+        <h3>お気に入りはありません<h3>
+      <%end%>
+        </ul>
+    </div>
+
+    <div class = "mypage-contents">
+      <h3 class = "mypage-subtitle">
+        投稿一覧
+      </h3>
+      <ul class="mypage-list">
+          <% @items.each do | item |  %>
+        <li class = "mypage-list-wrap">
+            <%= link_to item_path(item.id) do %>
+                <%= image_tag item.image , class: "mypage-image" %>      
+                <h4 class="mypage-name"><%= item.name %></h4>
+                <h4 class="mypage-taste"><%= item.taste %></h4>
+            <% end %>
+        </li>
+          <% end %>
+      </ul>
+    </div>
+  </div>
+  <%= render "shared/footer"  %>
 
