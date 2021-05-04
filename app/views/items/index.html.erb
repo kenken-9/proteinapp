@@ -2,11 +2,11 @@
 <div class="top">
         <div class="top-title">
             <h1>プロテインを選ぶなら<br>アプリ名</h1>
+        </div>
             <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
                 <%= form.text_field :keyword, placeholder: "プロテインを検索する", class: "search-input" %>
                 <%= form.submit "検索", class: "search-btn" %>
             <% end %>
-        </div>
     </div>
     <div class="contents">
         <div class="item-contents">
