@@ -7,9 +7,13 @@
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
   <div class="search-list">
+  <% if @items.present? %>
     <% @items.each do |item| %>
       <%= render partial: "item", locals: { item: item } %>
     <% end %>
+      <%else%>
+      <p>該当商品はありませんでした</p>
+    <%end%>
   </div>
 </div>
 <%= render "shared/footer"  %>
