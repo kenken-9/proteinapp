@@ -3,7 +3,7 @@
   検索結果
   </h2>
   <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "プロテインを検索する", class: "search-input" %>
+    <%= form.text_field :keyword, placeholder: "商品名または味でプロテインを検索する", class: "search-input" %>
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
   <div class="search-list">
@@ -13,7 +13,7 @@
     <% end %>
       <%else%>
       <p>該当商品はありませんでした</p>
-    <%end%>
+     <%end%>
   </div>
 </div>
 <%= render "shared/footer"  %>

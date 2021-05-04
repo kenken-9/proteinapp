@@ -22,7 +22,7 @@ class Item < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Item.where("name LIKE(?)" , "%#{search}%")
+      Item.where("(taste LIKE(?)) or (name LIKE(?))  ", "%#{search}%", "%#{search}%")
     else
       Item.all
     end
