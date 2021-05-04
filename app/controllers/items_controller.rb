@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_item, only: [:edit, :show, :update, :destroy]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
@@ -43,6 +43,10 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
+  end
+
+  def search
+    @items = Item.search(params[:keyword])
   end
 
   private
