@@ -20,5 +20,13 @@ class Item < ApplicationRecord
     validates :impression
   end
 
+  def self.search(search)
+    if search != ""
+      Item.where("(taste LIKE(?)) or (name LIKE(?))  ", "%#{search}%", "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
 end
 
