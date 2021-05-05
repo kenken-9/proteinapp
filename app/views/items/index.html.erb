@@ -56,12 +56,28 @@
                                 <span>新規登録をすると、お気に入りのプロテインを保存したり、投稿できたりします。</span>
                             </div>
                             <div class="sign-up-box">
-                                <%= link_to "新規登録" , new_user_registration_path , class: "side-sign-up" %> </li>
+                                <%= link_to "新規登録" , new_user_registration_path , class: "side-sign-up" %> 
                             </div>
                         </div>
                     </div>
-                 <%end %>  
+                </li>
+
+                 <li> 
+                    <div class="user-info-container">
+                        <div class="side-container">
+                            <h2>ゲストログイン</h2>
+                            <div class="explan-login">
+                                <span>新規登録をせずに機能をお試しできます。</span>
+                            </div>
+                            <div class="sign-up-box">
+                                <%= link_to "お試し" , users_guest_sign_in_path , class: "side-sign-up" ,method: :post %>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            <%end %>  
             </ul>
         </div>
     </div>
 <%= render "shared/footer"  %>
+                           
