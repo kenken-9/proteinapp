@@ -1,18 +1,55 @@
 /* 画面上部のプロテインを選ぶなら部分 */
 .top{
     width: 100%;
-    height: 500px;
-    background-image: url(../shared/top-image.jpg);
+    height: 600px;
+    background-image: url("../items/top-image.jpg");
     background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.top-title {
-   font-size: 30px;
-    background-color:rgba(255,255,255,0.3) ;
+.top-wrap{
+    max-width: 1600px;
+    min-width: 1280px;
+    margin: 0 auto;
+    padding: 0 64px 0;
+    display: flex;
+    flex-direction: column;
 }
+
+.top-title-wrap{
+   font-size: 70px;
+    background-color:rgba(255,255,255,0.3) ;
+    width: 550px;
+    height: 330px;
+    margin: 100px 0px 80px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #404040;
+}
+
+.top-search-form{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.top-search-input{
+    width: 55%;
+    padding: 12px ;
+    margin-right: 3vw;
+    border: none;
+    border-radius: 6px;
+}
+
+.top-search-btn{
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+
 
 /* //画面上部のプロテインを選ぶなら部分 */
 

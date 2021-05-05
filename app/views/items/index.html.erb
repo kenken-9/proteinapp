@@ -1,13 +1,19 @@
-<%= render "shared/header"  %>
-<div class="top">
-        <div class="top-title">
-            <h1>プロテインを選ぶなら<br>アプリ名</h1>
+<div class = "home">
+    <%= render "shared/header"  %>
+    <div class="top">
+        <div class = "top-wrap">
+            <div class="top-title-wrap">
+                <h1 class = "top-title">Being healthy<br>is the best<br>Plog</h1>
+            </div>
+            <div class = "top-form">
+                <%= form_with(url: search_items_path, local: true, method: :get, class: "top-search-form") do |form| %>
+                <%= form.text_field :keyword, placeholder: "商品名または味でプロテインを検索する", class: "top-search-input" %>
+                <%= form.submit "検索", class: "top-search-btn" %>
+                <% end %>
+            </div>
         </div>
-            <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
-                <%= form.text_field :keyword, placeholder: "商品名または味でプロテインを検索する", class: "search-input" %>
-                <%= form.submit "検索", class: "search-btn" %>
-            <% end %>
     </div>
+
     <div class="contents">
         <div class="item-contents">
             <h2 class="item-title">Protein index</h2>
@@ -79,5 +85,6 @@
             </ul>
         </div>
     </div>
-<%= render "shared/footer"  %>
+    <%= render "shared/footer"  %>
+</div>
                            
