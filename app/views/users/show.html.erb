@@ -29,15 +29,19 @@
       <h3 class = "mypage-subtitle">
         投稿一覧
       </h3>
+      <% if @items.present? %>
       <ul class="mypage-list">
           <% @items.each do | item |  %>
-        <li class = "mypage-list-wrap">
-            <%= link_to item_path(item.id) do %>
+            <li class = "mypage-list-wrap">
+              <%= link_to item_path(item.id) do %>
                 <%= image_tag item.image , class: "mypage-image" %>      
                 <h4 class="mypage-name"><%= item.name %></h4>
                 <h4 class="mypage-taste"><%= item.taste %></h4>
-            <% end %>
-        </li>
+              <% end %>
+          <% end%>
+            </li>
+          <% else%>
+             <p>投稿がありません</p>
           <% end %>
       </ul>
     </div>
