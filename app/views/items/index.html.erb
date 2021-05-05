@@ -28,8 +28,8 @@
               <% if user_signed_in? %>
 
                     <h3 class= "side-title">
-                        <%= link_to current_user.nickname , user_path(current_user), class: "user-nickname"%>
-                        さんの お気に入り一覧
+                        <%= link_to current_user.nickname , user_path(current_user), class: "sidebar-user-nickname"%>
+                        さんのお気に入り一覧
                     </h3>
                     <% if @bookmark_list.present? %>
                         <% @bookmark_list.each do |item|%>
@@ -50,7 +50,7 @@
                     <%end%>
 
                 <%= link_to(new_item_path,class: "post-btn") do  %>
-                    <span class= "post-btn-text">商品投稿</span>
+                    <span class= "post-btn-text">投稿</span>
                     <%= image_tag "icon_barbell.png"  , class: "post-btn-icon" %>
                 <%end%>
                 <%else %>
@@ -67,7 +67,19 @@
                         </div>
                     </div>
                 </li>
-
+                <li> 
+                    <div class="user-info-container">
+                        <div class="side-container">
+                            <h2>ログイン</h2>
+                            <div class="explan-login">
+                                <span>登録済みの方はこちらへ。</span>
+                            </div>
+                            <div class="sign-up-box">
+                                <%= link_to "ログイン" , new_user_session_path , class: "side-sign-up" ,method: :post %>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                  <li> 
                     <div class="user-info-container">
                         <div class="side-container">
