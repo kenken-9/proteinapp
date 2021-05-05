@@ -18,15 +18,18 @@
         <div class="item-contents">
             <h2 class="item-title">Protein index</h2>
             <ul class="item-list">
-                <% @items.each do | item |  %>
-                    <%= render partial: "item", locals: { item: item } %>
-                <% end%> 
+                <% if @items.present? %>
+                    <% @items.each do | item |  %>
+                        <%= render partial: "item", locals: { item: item } %>
+                    <% end%> 
+                <% else%>
+                    <p>投稿がありません</p>
+                <% end%>
             </ul>
         </div>
         <div class="side-ber">
             <ul class="side-info">
               <% if user_signed_in? %>
-
                     <h3 class= "side-title">
                         <%= link_to current_user.nickname , user_path(current_user), class: "sidebar-user-nickname"%>
                         さんのお気に入り一覧
