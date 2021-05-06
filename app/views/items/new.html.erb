@@ -1,3 +1,4 @@
+<%= render "shared/subheader" %>
 <div class="items-sell-contents">
     <div class="items-sell-main">
         <h2 class="items-sell-title">プロテインの情報を入力</h2>
@@ -86,12 +87,12 @@
         <%# /商品の説明 %>
         <%# 下部ボタン %>
         <div class="sell-btn-contents">
-            <%= f.submit "投稿する" , class:"sell-btn" %>
             <%= link_to "もどる" , root_path, class:"back-btn" %>
+            <%= f.submit "投稿する" , class:"sell-btn" %>
         </div>
         <%# /下部ボタン %>
     </div>
     <% end %>
-    <%= render "shared/footer"%>
 </div>
+<%= render "shared/footer"%>
 

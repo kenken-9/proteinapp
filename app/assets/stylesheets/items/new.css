@@ -3,17 +3,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-width: 500px;
+    background-color: #fafafa;
+    padding: 5vh 0;
 }
 
 .items-sell-main{
     width: 70vw;
-    min-width: 450px;
-    padding: 10vh 12vw ;
-    border: 1px solid black;
-    margin: 20vh 0;
+    padding: 8vh 8vw;
+    border: 1px solid lightgray;
     border-radius: 5px;
     text-align: center;
+    background-color: #fff;
+    margin: 5vh 0;
 }
 
 .items-sell-title{
@@ -71,18 +72,29 @@
 
 .sell-btn-contents{
     width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .sell-btn{
-    width: 70%;
-    height: 50px;
-    font-size: 14px;
-    margin-bottom: 4vh;
+    background-color: #e0e0e0;
+    padding: 15px 30px ;
+    cursor: pointer;
+    border-radius: 99%;
+    margin-left: 15px;
+    border: none;
+}
+
+.sell-btn:hover{
+    background-color: #f6bfbc;
+    color: #fff;
 }
 
 .back-btn{
-    background-color: antiquewhite;
-    width: 70%;
-    padding: 15px 32%;
+    background-color: #e0e0e0;
+    padding: 15px 30px ;
+    cursor: pointer;
+    border-radius: 99%;
+    color: black;
 }
