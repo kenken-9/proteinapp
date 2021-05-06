@@ -1,3 +1,4 @@
+<%= render "shared/subheader"%>
 <div class="items-sell-contents">
     <div class="items-sell-main">
         <h2 class="items-sell-title">プロテインの情報を編集</h2>
@@ -86,12 +87,12 @@
         <%# /商品の説明 %>
         <%# 下部ボタン %>
         <div class="sell-btn-contents">
-            <%= f.submit "変更を保存" , class:"sell-btn" %>
             <%= link_to "もどる" , item_path(@item), class:"back-btn" %>
+            <%= f.submit "変更を保存" , class:"sell-btn" %>
         </div>
         <%# /下部ボタン %>
     </div>
     <% end %>
-    <%= render "shared/footer"%>
 </div>
+<%= render "shared/footer"%>
 
