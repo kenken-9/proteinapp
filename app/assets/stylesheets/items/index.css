@@ -27,18 +27,18 @@
     color: #404040;
 }
 
+/* 検索フォームは検索結果ページと共通 */
 .top-search-form{
     display: flex;
     justify-content: center;
-    width: 100%;
-    
+    width: 100%;   
 }
 
 .top-search-input{
     width: 55%;
     padding: 12px ;
     margin-right: 3vw;
-    border: none;
+    border: 1px solid lightgray;
     border-radius: 6px;
 }
 
