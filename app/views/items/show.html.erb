@@ -12,7 +12,7 @@
                 <tbody>
                     <tr>
                         <th class="detail-item">投稿者</th>
-                        <td class="detail-value"><%= @item.user.nickname %></td>
+                        <td class="detail-value"><%= link_to @item.user.nickname, user_path(@item.user) %></td>
                     </tr>
                     <tr>
                         <th class="detail-item">プロテイン名</th>
