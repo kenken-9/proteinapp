@@ -7,34 +7,37 @@ a{
 }
 
 .top-page-header{
-    width: 100vw;
-    padding: 3vh 10vw;
+    width: 100%;
+   
     display: flex;
-    background-color:#d9e5ff;
     justify-content: space-between;
+    align-items: center;
 }
 
-.header-left{
-
-}
-
-.header-right{
-    
+.header-title{
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 3px;
 }
 
 .list-right{
     display: flex;
+    font-size: 18px;
 }
 
 .user-nickname{
     text-decoration: none;
+    color: #fff;
 }
 
 .logout{
     text-decoration: none;
     margin-left: 5vw;
+    color: #fff;
 }
 
 .sign-up{
     margin-left: 5vw;
+    color: #fff;
 }

@@ -1,17 +1,18 @@
+<%= render "shared/subheader" %>
 <div class="item-show">
     <div class="item-box">
-        <h2 class="show-name">
+        <h2 class="show-title">
         Protein Date
         </h2>
         <div class="show-wrap">
-            <div class="item-img-content">
-                <%= image_tag @item.image, class:"item-box-img" %>
+            <div class="show-img-wrap">
+                <%= image_tag @item.image, class:"show-image" %>
             </div>
             <table class= "detail-table" >
                 <tbody>
                     <tr>
                         <th class="detail-item">投稿者</th>
-                        <td class="detail-value"><%= @item.user.nickname %></td>
+                        <td class="detail-value"><%= link_to @item.user.nickname, user_path(@item.user) %></td>
                     </tr>
                     <tr>
                         <th class="detail-item">プロテイン名</th>
@@ -26,11 +27,12 @@
                         <td class="detail-value"><%= @item.price %>  円</td>
                     </tr>
                     <tr>
-                        <th class="detail-item">タンパク質</th>
+                        <th class="detail-item">タンパク質<br>(1食あたり)</th>
                         <td class="detail-value"><%= @item.protein %>  g</td>
                     </tr>
                     <tr>
-                        <th class="detail-item">脂質</th>
+                        <th class="detail-item">脂質
+                        <br>(1食あたり)</th>
                         <td class="detail-value"><%= @item.lipid %>  g</td>
                     </tr>
                     <tr>
@@ -44,23 +46,28 @@
                 </tbody>
             </table>
         </div>
-
         <div class="bookmarks" id="bookmark_<%= @item.id %>">
             <%= render 'bookmarks/bookmark', item: @item %>
         </div>
+    </div>
 
+    <div class="comments-area">
+         <h4 class = "comment-title">コメント一覧</h4>
         <div class="comments">
-            <h4>コメント一覧</h4>
-            <% @comments.each do |comment| %>
-            <p>
-                <%= comment.user.nickname %>
-                <%= comment.text%>
-            </p>
-            <% end %>
+            <% if @comments.present? %>
+                <% @comments.each do |comment| %>
+                <p class = "comment-letter">
+                    <%= comment.user.nickname %>
+                    <%= comment.text%>
+                </p>
+                <% end %>
+             <% else%>
+                <p>コメントがありません</p>
+            <% end%>
         </div>
         <div class="comments-box">
             <% if user_signed_in? %>
-                <%= form_with(model: [@item , @comment ], local: true) do |form| %>
+                <%= form_with(model: [@item , @comment ], class:"comment-form", local: true) do |form| %>
                 <%= form.text_area :text , placeholder: "コメントする" ,class:"comment-text"%>
                 <%= form.submit "送信", class:"comment-btn" %>
                 <%end%>
@@ -68,13 +75,15 @@
                 <span class="comment-announce">コメントを投稿するには新規登録/ログインが必要です</span>
             <%end%>
         </div>
-        <div class="sell-btn-show">
-            <%= link_to "もどる" , root_path, class:"show-back-btn" %>
-        </div>
+    </div>
+    <div class = "btn-area">
         <% if user_signed_in? && current_user.id == @item.user_id%>
             <%= link_to "編集" , edit_item_path(@item), class: "edit-item-btn" %>
             <%= link_to "削除" , item_path(@item),  method: :delete , class: "delete-item-btn" %>
         <%end%>
+        <div class="sell-btn-show">
+            <%= link_to "もどる" , root_path, class:"show-back-btn" %>
+        </div>
     </div>
 </div>
 

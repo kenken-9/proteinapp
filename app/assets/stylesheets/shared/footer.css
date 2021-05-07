@@ -1,8 +1,8 @@
 footer{
-    width: 100vw;
+    width: 100%;
     padding: 2vh 10vw;
     display: flex;
     justify-content: center;
-    background-color: gray;
-    color: #f0f0f0;
+    background-color: #dfdfdf;
+    color:#404040;
 }

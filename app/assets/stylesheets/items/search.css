@@ -3,34 +3,19 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 5vh 5vw;
+    padding: 5vh 0;
 }
 
 .search-title{
     font-size: 25px;
-    margin: 15px 0 ; 
+    margin-bottom: 15px; 
+    text-decoration:underline  #bad3ff ;
 }
 
-.search-form{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.search-input{
-    width: 40%;
-    padding: 10px;
-    margin-right: 3vw;
-}
-
-.search-btn{
-    padding: 10px 15px;
-}
 
 .search-list{
     width: 90%;
-    background-color: #f8f8f8;
+    background-color: #fafafa;
     display: flex;
     justify-content: center;
     margin: 5vh 0;
@@ -42,8 +27,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid black;
+    border: 1px solid lightgrey;
     padding: 1vw;
     margin: 1vw;
     background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 4px lightgray;
 }
+
+/* 検索フォームは検索結果ページと共通 index.cssに記述*/

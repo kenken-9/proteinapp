@@ -1,15 +1,11 @@
-<%# showファイルのクラスを使用。リファクタリング予定 %>
-
-<div class="item-show">
-    <div class="item-box">
-        <h2 class="show-name">
+<%= render "shared/subheader"%>
+<div class="item-delete">
+    <div class="item-delete-wrap">
+        <h2 class="delete-message">
         投稿情報を削除しました
         </h2>
-        
-        <div class="sell-btn-show">
-            <%= link_to "トップページ" , root_path, class:"show-back-btn" %>
-        </div>
-       
+        <%= link_to "トップページ" , root_path, class:"delete-back-btn" %>
+        </div>  
     </div>
 </div>
 <%= render "shared/footer" %>

@@ -1,34 +1,74 @@
 /* 画面上部のプロテインを選ぶなら部分 */
 .top{
     width: 100%;
-    height: 500px;
-    background-image: url(../shared/top-image.jpg);
+    height: 700px;
+    background-image: url("../items/top-image.jpg");
     background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.top-title {
-   font-size: 30px;
-    background-color:rgba(255,255,255,0.3) ;
+.top-wrap{
+    max-width: 1600px;
+    min-width: 1280px;
+    margin: 0 auto;
+    padding: 15px 64px ;
+    display: flex;
+    flex-direction: column;
 }
+
+.top-title-wrap{
+   font-size: 70px;
+    background-color:rgba(255,255,255,0.3) ;
+    width: 550px;
+    height: 330px;
+    margin: 100px 0px 80px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #404040;
+}
+
+/* 検索フォームは検索結果ページと共通 */
+.top-search-form{
+    display: flex;
+    justify-content: center;
+    width: 100%;   
+}
+
+.top-search-input{
+    width: 55%;
+    padding: 12px ;
+    margin-right: 3vw;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+
+.top-search-btn{
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.top-search-btn:hover{
+    background-color: #f6bfbc;
+    color: #fff;
+}
+
+
 
 /* //画面上部のプロテインを選ぶなら部分 */
 
 /* 商品一覧部分 */
 
 .contents{
-    background-color: azure;
     width:100%;
-    
     display: flex;
     justify-content: space-between;
 }
 
 .item-contents{
     width:75%;
-    background-color: bisque;
+    background-color:#fafafa;
     padding:5vh 0 ;
     display: flex;
     align-items: center;
@@ -36,62 +76,72 @@
 }
 
 .item-title{
-    font-size: 5vh;
+    font-size: 30px;
     line-height: 1.4;
     margin-bottom: 2vh;
+    color: #404040;
+    text-decoration:underline  #bad3ff ;
 }
 
 .item-list{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    
+    justify-content: space-between;
+    border: 1px ;
 }
 
 .item-list>.list {
     width: 37vh;
     padding: 1vw;
     margin:1vw;
-    background-color: antiquewhite;
-    border: 1px solid black;
+    background-color: #fff;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    box-shadow: 0 0 4px lightgray;
 }
 
 .item-img-content{
-    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .item-img{
-    width: 33vh;
-    height: 33vh;
+    width: 25vh;
+    height: 25vh;
 }
 
 .item-info{
     padding: 1vw;
+    color: #404040;
 }
+
+
 
 
 /*// 商品一覧部分 */
 
 /* サイドバー部分 */
 .side-ber{
-    background-color: azure;
+    background-color: #fafafa;
     width: 25%;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding:3vh 0 ;
+    border-left: 1px solid lightgray;
 }
 
 .post-btn{
-    border: 1px solid #a4c6ff;
-    background-color: #bad3ff;
+    background-color: #e0e0e0;
     width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed;
     border-radius: 99%;
-    bottom: 60px;
-    right: 32px;
+    margin-top: 20px;
+}
+
+.post-btn:hover{
+    background-color: #007bbb;
 }
 
 .post-btn-text{
@@ -117,7 +167,7 @@
 .user-info-container{
     width: 100%;
     padding: 16px;
-    background-color: antiquewhite;
+    
 }
 
 .side-container{
@@ -147,7 +197,12 @@
 
 .side-title{
     margin: 10px 0;
-    font-size: 20px;
+    font-size: 18px;
+    color: #404040;
+}
+
+.sidebar-user-nickname{
+    color: #404040;
 }
 
 .bookmark-list{
@@ -156,12 +211,14 @@
     margin: 10px 0;
     background-color: #fff;
     width:100%;
+    border-radius: 3px;
 }
 
 .bookmark{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    color:#404040;
 }
 
 .bookmark-image{
