@@ -9,11 +9,7 @@ RSpec.describe "Items", type: :system do
   context "投稿に成功したとき" do
     it "ログインしたユーザーは新規投稿できる" do
       # ログインする
-      visit new_user_session_path
-      fill_in "email" , with: @user.email
-      fill_in "password" , with: @user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@user)
 
       # 新規投稿ページへのリンクがあることを確認する
       expect(page).to have_content("投稿")
