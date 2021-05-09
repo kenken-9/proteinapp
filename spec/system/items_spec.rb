@@ -53,8 +53,56 @@ RSpec.describe "Items", type: :system do
         expect(page).to have_no_selector("post-btn")
       end
     end
+  end
+end
 
 
+RSpec.describe "Items編集", type: :system do
+  before do
+    @item1 = FactoryBot.create(:item)
+    @item2 = FactoryBot.create(:item)
   end
 
+  context "商品編集ができる時" do
+    it "ログインしたユーザーは自分が投稿したツイートの編集ができる" do
+      # 商品1を投稿したユーザーでログイン
+      visit new_user_session_path
+      fill_in "email", with: @item1.user.email
+      fill_in "password", with: @item1.user.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq(root_path)
+
+      # 商品詳細ページに移動する
+      visit item_path(@item1)
+
+      # 商品編集ページに移動する
+      visit edit_item_path(@item1)
+
+      # 投稿内容を編集する
+      fill_in "item-name" ,with: "#{@item1.name}+編集した名前"
+      fill_in "item-taste" ,with: "#{@item1.taste}+編集した味"
+      fill_in "item-price" ,with: 999999
+      fill_in "item-amount" ,with: 222222
+      fill_in "item-protein" ,with: 333333
+      fill_in "item-lipid" ,with: 44444
+      fill_in "item-impression" ,with: "#{@item1.impression}+編集したプロフィール"
+
+      # 編集してもItemモデルのカウントは変わらないことを確認する
+      expect{
+      find('input[name="commit"]').click
+    }.to change { Item.count }.by(0)
+
+    # 商品詳細ページに移動する
+    visit item_path(@item1)
+
+    # 商品詳細ページに先ほど更新した内容が表示されている
+    expect(page).to have_content("#{@item1.name}+編集した名前")
+    expect(page).to have_content("#{@item1.taste}+編集した味")
+    expect(page).to have_content(999999)
+    expect(page).to have_content(222222)
+    expect(page).to have_content(333333)
+    expect(page).to have_content(44444)
+    end
+
+  end
 end

@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :item do
     name {"プロテイン名"}
     taste {"味"}
-    price {999}
+    price  { 1111 }
     protein {10}
     lipid {1}
     amount{10}
