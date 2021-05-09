@@ -103,6 +103,34 @@ RSpec.describe "Items編集", type: :system do
     expect(page).to have_content(333333)
     expect(page).to have_content(44444)
     end
+  end
 
+  context "商品編集ができないとき" do
+    it "ログインしたユーザーは自分以外が投稿した商品の編集画面には遷移できない" do
+      # item1を投稿したユーザーでログインする
+      visit new_user_session_path
+      fill_in "email", with: @item1.user.email
+      fill_in "password", with: @item1.user.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq(root_path)
+
+      # item2の商品詳細ページへ移動する
+      visit item_path(@item2)
+
+      # 編集ボタンがないことを確認する
+      expect(page).to have_no_link "編集" , href: edit_item_path(@item2)
+    end
+
+    it  "ログインしていないと商品の編集画面には遷移できない" do
+      #item1の商品詳細ページへ移動する
+      visit item_path(@item1)
+
+      # 編集ボタンがないことを確認する
+      expect(page).to have_no_link "編集" , href: edit_item_path(@item1)
+    end
   end
 end
+
+
+
+
