@@ -132,5 +132,41 @@ RSpec.describe "Items編集", type: :system do
 end
 
 
+RSpec.describe "Items編集", type: :system do
+  before do
+    @item1 = FactoryBot.create(:item)
+    @item2 = FactoryBot.create(:item)
+  end
 
+  context "商品削除ができるとき" do
+    it "ログインしたユーザーは自分の投稿した商品を削除できる" do
+      # item1を投稿したユーザーでログイン
+      visit new_user_session_path
+      fill_in "email", with: @item1.user.email
+      fill_in "password", with: @item1.user.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq(root_path)
+
+      # 商品詳細ページに移動する
+      visit item_path(@item1)
+
+      # 削除ボタンがあることを確認する
+      expect(page).to have_link "削除" , href: item_path(@item1)
+
+      #投稿を削除するとレコードの数が1減ることを確認
+      expect{
+        find_link("削除", href: item_path(@item1)).click
+      }.to change { Item.count }.by(-1) 
+
+      # 削除画面に遷移したことを確認する
+      expect(current_path).to eq(item_path(@item1))
+
+      # トップページに遷移する
+      visit root_path
+
+      # トップページに投稿1の内容が存在しないことを確認
+      expect(page).to have_no_link item_path(@item1)
+    end 
+  end
+end
 
