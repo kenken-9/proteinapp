@@ -5,7 +5,7 @@ RSpec.describe "Users", type: :system do
     @user = FactoryBot.build(:user)
   end
 
-  context "ユーザー新規登録ができるとき" do
+  context "ユーザー新規登録" do
     it "正しい情報を入力すればユーザー新規登録ができてトップページに移動する" do
       # トップページに移動する
       visit root_path
