@@ -66,11 +66,7 @@ RSpec.describe "Items編集", type: :system do
   context "商品編集ができる時" do
     it "ログインしたユーザーは自分が投稿したツイートの編集ができる" do
       # 商品1を投稿したユーザーでログイン
-      visit new_user_session_path
-      fill_in "email", with: @item1.user.email
-      fill_in "password", with: @item1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in1(@user)
 
       # 商品詳細ページに移動する
       visit item_path(@item1)
@@ -108,11 +104,7 @@ RSpec.describe "Items編集", type: :system do
   context "商品編集ができないとき" do
     it "ログインしたユーザーは自分以外が投稿した商品の編集画面には遷移できない" do
       # item1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in "email", with: @item1.user.email
-      fill_in "password", with: @item1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in1(@user)
 
       # item2の商品詳細ページへ移動する
       visit item_path(@item2)
@@ -141,11 +133,7 @@ RSpec.describe "Items編集", type: :system do
   context "商品削除ができるとき" do
     it "ログインしたユーザーは自分の投稿した商品を削除できる" do
       # item1を投稿したユーザーでログイン
-      visit new_user_session_path
-      fill_in "email", with: @item1.user.email
-      fill_in "password", with: @item1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in1(@user)
 
       # 商品詳細ページに移動する
       visit item_path(@item1)
@@ -166,6 +154,30 @@ RSpec.describe "Items編集", type: :system do
 
       # トップページに投稿1の内容が存在しないことを確認
       expect(page).to have_no_link item_path(@item1)
+    end 
+  end
+
+  context "商品削除ができない時" do
+    it "ログインしたユーザーは自分以外が投稿した商品を削除できない" do
+      # 商品1を投稿したユーザーでログインする
+      sign_in1(@user)
+
+      # 商品2の詳細ページに移動する
+      visit item_path(@item2)
+
+      # 削除のボタンがないことを確認する
+      expect(page).to have_no_link "削除" , href: item_path(@item2)
+    end
+
+    it "ログインしていないと削除できない" do
+      # トップページに移動
+      visit root_path
+
+      # 商品詳細ページに移動
+      visit item_path(@item2)
+
+      # 削除のボタンがないことを確認する
+      expect(page).to have_no_link "削除" , href: item_path(@item2)
     end 
   end
 end
