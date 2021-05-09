@@ -124,7 +124,7 @@ RSpec.describe "Items編集", type: :system do
 end
 
 
-RSpec.describe "Items編集", type: :system do
+RSpec.describe "Items削除", type: :system do
   before do
     @item1 = FactoryBot.create(:item)
     @item2 = FactoryBot.create(:item)
@@ -181,4 +181,3 @@ RSpec.describe "Items編集", type: :system do
     end 
   end
 end
-
