@@ -1,8 +1,8 @@
-<%= render "shared/header"%>
+<%= render "shared/subheader" %>
 
 <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 
-<div class="form-wrap">
+<div class="session-wrap">
 
     <div class="form-account-title">
       <h1 class="title-signup">
@@ -40,7 +40,7 @@
       </div>
 
     </div>
+  <% end %>
 </div>
-<% end %>
 <%= render "shared/footer"%>
 
