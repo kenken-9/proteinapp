@@ -8,20 +8,19 @@ class User < ApplicationRecord
   has_many :comments
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_items, through: :bookmarks, source: :item
-  
+
   with_options presence: true do
     validates :nickname
     validates :profile
   end
 
-  validates :password, format: {with:/\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message:"を6文字以上の半角英数字で入力してください" }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'を6文字以上の半角英数字で入力してください' }
 
   def self.guest
-    find_or_create_by!(email: "guest@example.com") do |user|
+    find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64(7)
-      user.nickname = "ゲストユーザー"
-      user.profile = "ゲストユーザーです"
+      user.nickname = 'ゲストユーザー'
+      user.profile = 'ゲストユーザーです'
     end
   end
-
 end

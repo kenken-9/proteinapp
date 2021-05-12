@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
   def index
-    @items = Item.includes(:user).order("created_at DESC")
+    @items = Item.includes(:user).order('created_at DESC')
 
     if user_signed_in?
       bookmarks = Bookmark.where(user_id: current_user.id).pluck(:item_id)
@@ -52,7 +52,8 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :taste, :price, :protein, :lipid, :amount, :impression, :image).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :taste, :price, :protein, :lipid, :amount, :impression,
+                                 :image).merge(user_id: current_user.id)
   end
 
   def set_item
@@ -60,8 +61,6 @@ class ItemsController < ApplicationController
   end
 
   def contributor_confirmation
-    unless current_user == @item.user
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user == @item.user
   end
 end

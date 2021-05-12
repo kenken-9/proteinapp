@@ -8,6 +8,4 @@ class UsersController < ApplicationController
     bookmarks = Bookmark.where(user_id: current_user.id).pluck(:item_id)
     @bookmark_list = Item.find(bookmarks)
   end
-
-
 end
