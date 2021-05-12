@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 2021_04_29_214637) do
     t.string "name", null: false
     t.string "taste", null: false
     t.integer "price", null: false
-    t.integer "protein", null: false
-    t.integer "lipid", null: false
+    t.float "protein", null: false
+    t.float "lipid", null: false
     t.integer "amount", null: false
     t.text "impression", null: false
     t.bigint "user_id", null: false
