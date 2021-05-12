@@ -9,13 +9,16 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :taste
-    with_options numericality: { only_integer: true , message: "を半角数字で入力してください"} do
-      with_options inclusion: { in: 1..9999999, message: "を1以上で入力してください" } do
+    with_options inclusion: { in: 1..9999999, message: "を1以上で入力してください" } do
+      validates :protein
+      with_options numericality: { only_integer: true , message: "を半角数字で入力してください"} do
         validates :price
         validates :amount
-        validates :protein
       end
-        validates :lipid
+    end
+    with_options numericality: { only_float: true , message: "を半角数字で入力してください"} do
+    validates :lipid
+    validates :protein
     end
     validates :impression
   end
