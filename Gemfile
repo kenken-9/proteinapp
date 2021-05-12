@@ -68,4 +68,8 @@ gem "mini_magick"
 
 gem "image_processing", "~> 1.2"
 
+group :development do
+  gem 'rubocop', require: false
+end
+
 gem "aws-sdk-s3", require: false
