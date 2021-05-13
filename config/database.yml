@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: proteinapp_production
-  username: proteinapp
-  password: <%= ENV['PROTEINAPP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
