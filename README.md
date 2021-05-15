@@ -30,7 +30,7 @@ http://3.115.228.20/
 - Ruby 2.6.5
 - Ruby on Rails 6.0.0
 - HTML/CSS
-- javascript
+- JavaScript
 - jQuery
 - MySQL
 - Rspec
