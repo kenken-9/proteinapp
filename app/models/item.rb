@@ -26,6 +26,8 @@ class Item < ApplicationRecord
     validates :impression
   end
 
+  validates :category_id, numericality: { other_than: 1, message: 'を選択してください' }
+
   def self.search(search)
     if search != ''
       Item.where('(taste LIKE(?)) or (name LIKE(?))  ', "%#{search}%", "%#{search}%")
