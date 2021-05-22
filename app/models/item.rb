@@ -5,6 +5,9 @@ class Item < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_users, through: :bookmarks, source: :user
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+
   with_options presence: true do
     validates :image
     validates :name

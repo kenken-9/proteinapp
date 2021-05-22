@@ -7,4 +7,8 @@ class Category.rb < ActiveHash::Base
         {id:5,name: "スポーツをしている方向け"},
         {id:6,name: "その他"}
     ]
+
+    include ActiveHash::Associations
+    has_many :items
+
 end
