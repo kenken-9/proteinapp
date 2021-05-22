@@ -8,6 +8,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.float :lipid, null: false
       t.integer :amount, null: false
       t.text :impression, null: false
+      t.integer :category_id, null: false
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end
