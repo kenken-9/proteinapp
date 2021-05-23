@@ -8,6 +8,7 @@ FactoryBot.define do
     amount { 10 }
     impression { 'おすすめのポイント' }
     association :user
+    category_id { 2 }
 
     after(:build) do |item|
       item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')

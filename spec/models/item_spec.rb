@@ -122,6 +122,12 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('タンパク質の量を1以上で入力してください')
       end
+
+      it 'カテゴリーを選択しないと登録出来ない' do
+        @item.category_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('カテゴリーを選択してください')
+      end
     end
   end
 end

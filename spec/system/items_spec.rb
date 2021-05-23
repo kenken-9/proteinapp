@@ -22,6 +22,7 @@ RSpec.describe 'Items', type: :system do
       attach_file('item[image]', image_path, make_visible: true)
       fill_in 'item-name', with: @item.name
       fill_in 'item-taste', with: @item.taste
+      select  'はじめての方向け', from: 'item_category_id'
       fill_in 'item-price', with: @item.price
       fill_in 'item-amount', with: @item.amount
       fill_in 'item-protein', with: @item.protein

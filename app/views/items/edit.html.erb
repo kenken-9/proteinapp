@@ -38,6 +38,13 @@
             </div>
             <div class="items-wrap">
                     <div class="weight-bold-text">
+                    カテゴリー
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <%= f.collection_select(:category_id, Category.all, :id, :name,{class:"items-text" , id:"item-category"} ) %>
+                </div>
+            <div class="items-wrap">
+                    <div class="weight-bold-text">
                         価格
                         <span class="indispensable">必須</span>
                     </div>

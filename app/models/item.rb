@@ -5,6 +5,9 @@ class Item < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_users, through: :bookmarks, source: :user
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+
   with_options presence: true do
     validates :image
     validates :name
@@ -22,6 +25,8 @@ class Item < ApplicationRecord
     end
     validates :impression
   end
+
+  validates :category_id, numericality: { other_than: 1, message: 'を選択してください' }
 
   def self.search(search)
     if search != ''
