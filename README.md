@@ -23,9 +23,6 @@ Plog
 [![Image from Gyazo](https://i.gyazo.com/3a830b3ff4ad5925515384e449981f2d.gif)](https://gyazo.com/3a830b3ff4ad5925515384e449981f2d)
 トップページのサイドバーにある投稿ボタンをクリックすると、商品投稿画面に遷移します。各項目を入力すると投稿が可能です。
 
-### URL
-https://www.protein-app.com/
-
 ## 使用技術
 - Ruby 2.6.5
 - Ruby on Rails 6.0.0
